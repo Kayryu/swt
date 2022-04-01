@@ -8,7 +8,6 @@ use wasm_bindgen::prelude::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[link(name = "libfoo")]
 extern "C" {
     fn cadd(a: u32, b: u32) -> u32;
 }
