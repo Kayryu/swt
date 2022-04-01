@@ -13,18 +13,19 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-extern {
+extern "C" {
     fn alert(s: &str);
 }
 
 #[wasm_bindgen]
 pub fn greet() {
     alert("Hello, test!");
+    utils::set_panic_hook();
 }
 
 #[wasm_bindgen]
 pub fn hello(name: String) -> String {
     let len = name.len() as u32;
-    let c = unsafe {cadd(len, len) };
+    let c = unsafe { cadd(len, len) };
     format!("hello {}. The libc result: {}", name, c)
 }
