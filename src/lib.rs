@@ -24,6 +24,7 @@ pub fn greet() {
 
 #[wasm_bindgen]
 pub fn hello(name: String) -> String {
-    let c = unsafe {cadd(1, 2) };
-    format!("hello {}, add: {}", name, c)
+    let len = name.len() as u32;
+    let c = unsafe {cadd(len, len) };
+    format!("hello {}. The libc result: {}", name, c)
 }
