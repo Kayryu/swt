@@ -67,3 +67,17 @@ wasm-pack publish
   for logging panic messages to the developer console.
 * [`wee_alloc`](https://github.com/rustwasm/wee_alloc), an allocator optimized
   for small code size.
+
+
+
+## tools
+```
+# build by wasm-pack,  this need set crate-type = ["cdylib", "rlib"] in cargo.toml
+wasm-pack build --target web  
+
+# build by raw
+cargo build --release --target wasm32-unknown-unknown
+
+# wasm to wat format
+wasm2wat web_cert_bg.wasm > web_cert_bg.wat
+```
