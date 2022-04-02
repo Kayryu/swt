@@ -1,4 +1,4 @@
-import init, { hello } from "./pkg/test.js"
+import init, { hello } from "./pkg/wt.js"
 
 async function run() {
     await init()
