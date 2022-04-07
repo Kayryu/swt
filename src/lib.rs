@@ -1,5 +1,12 @@
+#![no_std]
+
+#[cfg(feature = "alloc")]
+extern crate alloc;
+
 mod utils;
 
+use alloc::format;
+use alloc::string::String;
 use wasm_bindgen::prelude::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global

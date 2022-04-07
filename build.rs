@@ -143,7 +143,7 @@ fn build_c_code(target: &Target, out_dir: &Path) {
     #[cfg(not(feature = "wasm32_c"))]
     {
         if &target.arch == "wasm32" {
-            println!("cargo:warning=build for wasm");
+            println!("cargo:warning=skip build for wasm");
             return;
         }
     }
@@ -165,7 +165,7 @@ fn build_c_code(target: &Target, out_dir: &Path) {
         .collect::<Vec<_>>();
 
     let libs = [
-        ("ring-core", &core_srcs[..], &asm_srcs[..]),
+        ("foo", &core_srcs[..], &asm_srcs[..]),
     ];
 
     // XXX: Ideally, ring-test would only be built for `cargo test`, but Cargo
