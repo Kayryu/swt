@@ -3,7 +3,6 @@ name = "wt"
 version = "0.1.0"
 authors = ["kayryu <lukayryu@gmail.com>"]
 edition = "2018"
-build = "build.rs"
 
 [[bin]]
 name = "main"
@@ -32,11 +31,10 @@ console_error_panic_hook = { version = "0.1.6", optional = true }
 # Unfortunately, `wee_alloc` requires nightly Rust when targeting wasm for now.
 wee_alloc = { version = "0.4.5", optional = true }
 
+clib = { path = "./clib" }
+
 [dev-dependencies]
 wasm-bindgen-test = "0.3.13"
-
-[build-dependencies]
-cc = { version = "1.0.69", default-features = false }
 
 [profile.release]
 # Tell `rustc` to optimize for small code size.

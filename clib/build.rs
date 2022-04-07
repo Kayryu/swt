@@ -140,14 +140,6 @@ struct Target {
 }
 
 fn build_c_code(target: &Target, out_dir: &Path) {
-    #[cfg(not(feature = "wasm32_c"))]
-    {
-        if &target.arch == "wasm32" {
-            println!("cargo:warning=skip build for wasm");
-            return;
-        }
-    }
-
     let includes_modified = RING_INCLUDES
         .iter()
         .chain(RING_BUILD_FILE.iter())
