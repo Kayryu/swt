@@ -9,13 +9,13 @@ use std::fs;
 
 const RING_INCLUDES: &[&str] =
     &[
-      "foo.h",
+      "vendor/foo.h",
     ];
 
 const RING_BUILD_FILE: &[&str] = &["build.rs"];
 
 const RING_SRCS: &[(&[&str], &str)] = &[
-    (&[], "foo.c"),
+    (&[], "vendor/foo.c"),
 
 ];
 
